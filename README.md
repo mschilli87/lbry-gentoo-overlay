@@ -1,6 +1,6 @@
 # lbry-gentoo-overlay
 
-This repository contains a Gentoo Portage overlay to enable easy installation of the [LBRY.io](http://lbry.io/) suite.
+This repository contains a Gentoo Portage overlay to enable easy installation of the [LBRY](http://lbry.io/) suite.
 
 1.	Create `/etc/portage/repos.conf/lbry.conf`, containing:
 
