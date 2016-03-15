@@ -32,7 +32,7 @@ RDEPEND="
 	dev-python/qrcode[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	>=dev-python/slowaes-0.1[${PYTHON_USEDEP}]
-	dev-libs/protobuf[python,${PYTHON_USEDEP}]
+	=dev-libs/protobuf-3.0.0_beta2[python,${PYTHON_USEDEP}]
 	virtual/python-dnspython[${PYTHON_USEDEP}]
 	qrcode? ( media-gfx/zbar[python,v4l,${PYTHON_USEDEP}] )
 	qt4? (
@@ -40,8 +40,9 @@ RDEPEND="
 	)
 "
 DEPEND="
-	${RDEPEND}
+	${PYTHON_DEPS}
 	dev-python/setuptools[${PYTHON_USEDEP}]
+	sys-apps/sed
 	"
 
 DOCS="RELEASE-NOTES"
