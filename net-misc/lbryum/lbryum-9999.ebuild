@@ -40,8 +40,9 @@ RDEPEND="
 	)
 "
 DEPEND="
-	${RDEPEND}
+	${PYTHON_DEPS}
 	dev-python/setuptools[${PYTHON_USEDEP}]
+	sys-apps/sed
 	"
 
 DOCS="RELEASE-NOTES"
