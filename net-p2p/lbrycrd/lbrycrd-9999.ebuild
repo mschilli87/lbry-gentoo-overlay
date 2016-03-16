@@ -40,7 +40,7 @@ src_prepare() {
 		-e 's:BITCOIN:LBRYCRD:g' \
 		-e 's:bitcoind:lbrycrdd:g' \
 		-e 's:\bbitcoin\b:lbry:g' \
-		-e 's:\bBitcoin\b:LBRY.io:g' \
+		-e 's:\bBitcoin\b:LBRY:g' \
 		-i contrib/init/bitcoind.*
 
 	eautoreconf
