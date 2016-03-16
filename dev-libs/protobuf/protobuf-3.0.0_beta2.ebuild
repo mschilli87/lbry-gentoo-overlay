@@ -19,7 +19,7 @@ SRC_URI="https://github.com/google/${PN}/archive/v${My_PV}.tar.gz -> ${PN}-${My_
 
 LICENSE="Apache-2.0"
 SLOT="0/10" # subslot = soname major version
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~amd64-linux ~arm-linux ~x86-linux ~x64-macos ~x86-macos"
+KEYWORDS=""
 IUSE="emacs examples java python static-libs vim-syntax zlib"
 
 S="${WORKDIR}/${PN}-${My_PV}"
