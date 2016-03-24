@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS=""
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
-CDEPEND="
+RDEPEND="
 	${PYTHON_DEPS}
 	~dev-python/bitcoinrpc-0.1[${PYTHON_USEDEP}]
 	dev-python/leveldb[${PYTHON_USEDEP}]
@@ -32,10 +32,6 @@ CDEPEND="
 	~dev-python/unqlite-0.2.0[${PYTHON_USEDEP}]
 	dev-python/yapsy[${PYTHON_USEDEP}]
 	net-misc/lbryum[${PYTHON_USEDEP}]
-	"
-RDEPEND="
-	${CDEPEND}
-	net-p2p/lbrycrd
 	"
 DEPEND="
 	${CDEPEND}
