@@ -36,4 +36,10 @@ RDEPEND="
 DEPEND="
 	${CDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
+	sys-apps/sed
 	"
+
+src_prepare() {
+	sed -e "s:('lbrynet/:('share/lbrynet/:g" -i setup.py || die 'sed failed'
+	default
+}
