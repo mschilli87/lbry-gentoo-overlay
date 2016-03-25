@@ -19,12 +19,15 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
 	${PYTHON_DEPS}
+	dev-python/appdirs[${PYTHON_USEDEP}]
 	~dev-python/bitcoinrpc-0.1[${PYTHON_USEDEP}]
+	dev-python/jsonrpc[${PYTHON_USEDEP}]
 	dev-python/leveldb[${PYTHON_USEDEP}]
 	dev-python/miniupnpc[${PYTHON_USEDEP}]
 	dev-python/pycrypto[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.4.2[${PYTHON_USEDEP}]
 	dev-python/seccure[${PYTHON_USEDEP}]
+	dev-python/simplejson[${PYTHON_USEDEP}]
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
 	dev-python/twisted-core[${PYTHON_USEDEP}]
 	dev-python/twisted-web[${PYTHON_USEDEP}]
