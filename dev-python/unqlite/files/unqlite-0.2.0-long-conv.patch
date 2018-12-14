@@ -1,0 +1,22 @@
+Fix string to long conversion error
+
+Fix the following build error:
+
+ValueError: invalid literal for long() with base 8:
+'08420217248550443400745280086994171'
+
+This string clearly is base 10 (all digits from 0 to 9 are contained).
+
+--- unqlite-0.2.0/ctypesgen/ctypesgencore/parser/pplexer.py
++++ unqlite-0.2.0/ctypesgen/ctypesgencore/parser/pplexer.py
+@@ -214,8 +214,8 @@
+         # Convert base from hexadecimal
+         g1 = str(long(g1[2:],16))
+     elif g1[0]=="0":
+-        # Convert base from octal
+-        g1 = str(long(g1,8))
++        # Convert base from decimal
++        g1 = str(long(g1,10))
+ 
+     t.value = prefix + g1
+ 
