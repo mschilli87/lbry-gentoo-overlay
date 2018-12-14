@@ -1,6 +1,5 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 
@@ -24,3 +23,10 @@ DEPEND="
 	${RDEPEND}
 	dev-python/cython[${PYTHON_USEDEP}]
 	"
+
+src_prepare() {
+
+	# fix build error with string to long conversion
+	epatch "${FILESDIR}"/${PN}-${PV}-long-conv.patch
+
+}
