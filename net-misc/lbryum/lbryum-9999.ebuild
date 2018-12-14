@@ -1,6 +1,5 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI="5"
 
@@ -45,33 +44,9 @@ DEPEND="
 	sys-apps/sed
 	"
 
-DOCS="RELEASE-NOTES"
-
 src_prepare() {
-	# Don't advise using PIP
-	sed -i "s/On Linux, try 'sudo pip install zbar'/Re-emerge lbryum with the qrcode USE flag/" lib/qrscanner.py || die
-
 	# Prevent icon from being installed in the wrong location
 	sed -i '/icons/d' setup.py || die
-
-	# Remove unrequested GUI implementations:
-	rm -rf gui/android*
-	rm -rf gui/jsonrpc*
-	rm -rf gui/kivy*
-	local gui
-	for gui in  \
-		$(usex cli      '' stdio)  \
-		$(usex qt4      '' qt   )  \
-		$(usex ncurses  '' text )  \
-	; do
-		rm gui/"${gui}"* -r || die
-	done
-
-	if ! use qt4; then
-		sed -i "s/'electrum_gui\\.qt',//" setup.py || die
-		local bestgui=$(usex ncurses text stdio)
-		sed -i "s/\(config.get('gui', \?\)'classic'/\1'${bestgui}'/" electrum || die
-	fi
 
 	distutils-r1_src_prepare
 }
